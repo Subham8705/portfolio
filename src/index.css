@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-800 dark:text-gray-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+  }
+  
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-400;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600;
+  }
+  
+  .section {
+    @apply py-20 md:py-32;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(125deg, #3730a3 0%, #6366f1 40%, #8b5cf6 70%, #10b981 100%);
+}
+
+/* Custom cursor */
+.custom-cursor {
+  @apply fixed pointer-events-none z-50 h-6 w-6 rounded-full mix-blend-difference;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  transition: transform 0.2s ease-out;
+}
+
+.cursor-grow {
+  transform: translate(-50%, -50%) scale(3);
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply fixed top-0 left-0 right-0 h-1 bg-primary-600 origin-left z-50;
+}
+
+/* Disable custom cursor on mobile */
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}
