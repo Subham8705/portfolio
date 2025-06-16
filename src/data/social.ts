@@ -20,6 +20,6 @@ export const socialLinks: Social[] = [
 
 export const contactInfo: Contact = {
   email: 'subhamkumarshee@gmail.com',
-  phone: '+91 98765 43210',
+  // phone: '+91 98765 43210',
   location: 'Hyderabad, India'
 };

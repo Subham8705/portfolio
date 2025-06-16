@@ -17,7 +17,7 @@ export const education = [
   },
   {
     id: 'edu-3',
-    institution: 'Vikash School',
+    institution: 'Vikas The Concept School',
     degree: 'Secondary Education',
     duration: '2017 - 2021',
     description: 'Completed secondary education with strong foundation in mathematics, science, and computer applications.'
