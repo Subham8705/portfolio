@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             href="#home" 
             className="text-xl md:text-2xl font-bold font-serif text-primary-600 dark:text-primary-400"
           >
-            Portfolio
+            Subham
           </a>
 
           {/* Desktop Menu */}
