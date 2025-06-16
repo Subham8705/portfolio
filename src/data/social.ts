@@ -3,12 +3,12 @@ import { Social, Contact } from '../types';
 export const socialLinks: Social[] = [
   {
     name: 'GitHub',
-    url: 'https://github.com/subhamkumarshee',
+    url: 'https://github.com/Subham8705',
     icon: 'Github'
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/subhamkumarshee',
+    url: 'https://www.linkedin.com/in/subham-kumar-shee-221886328/',
     icon: 'Linkedin'
   },
   {

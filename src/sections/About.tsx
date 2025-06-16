@@ -46,7 +46,7 @@ const About: React.FC = () => {
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary-200 dark:bg-secondary-900 rounded-lg -z-10"></div>
               <div className="relative overflow-hidden rounded-lg shadow-xl">
                 <img
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_777,h_900,g_auto/v1743426464/A-20250216-WA0006_-_Subham_kumar_fhw4hr.jpg"
                   alt="About Me"
                   className="w-full h-auto"
                 />
