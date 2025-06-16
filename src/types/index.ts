@@ -33,6 +33,18 @@ export interface Education {
   description: string;
 }
 
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  image?: string;
+  credentialUrl?: string;
+  skills: string[];
+  featured: boolean;
+}
+
 export interface Social {
   name: string;
   url: string;
