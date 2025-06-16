@@ -10,7 +10,7 @@ export const education = [
   },
   {
     id: 'edu-2',
-    institution: 'Aakash Institute',
+    institution: 'Gauthami Junior & Degree College',
     degree: 'Intermediate Education',
     duration: '2021 - 2023',
     description: 'Completed intermediate education with focus on science and mathematics, preparing for engineering entrance examinations.'
