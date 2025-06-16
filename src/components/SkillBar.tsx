@@ -24,7 +24,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill, index }) => {
     frontend: "bg-primary-500 dark:bg-primary-600",
     backend: "bg-secondary-500 dark:bg-secondary-600",
     design: "bg-accent-500 dark:bg-accent-600",
-    other: "bg-gray-500 dark:bg-gray-600"
+    other: "bg-black-600 dark:bg-gray-600"
   };
 
   return (
