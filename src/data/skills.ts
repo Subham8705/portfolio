@@ -43,7 +43,7 @@ export const skills: Skill[] = [
   // Design & Tools
   {
     name: 'Figma',
-    level: 75,
+    level: 45,
     category: 'design',
   },
   {
