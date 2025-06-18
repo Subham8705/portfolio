@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description: 'This project explores the integration of RNA 3D structural information with gene expression data to enhance cancer detection methodologies',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/v1745566595/background_czwzgo.jpg',
     tags: ['React', 'Tailwind CSS','Python ML'],
-    // link: 'https://grietstudysphere.vercel.app/',
+    // link: '',
     github: 'https://github.com/nainat/RNA',
     featured: true,
   },
@@ -31,7 +31,6 @@ export const projects: Project[] = [
     github: 'https://github.com/Subham8705/GRIET.StudySphere',
     featured: true,
   },
-
   {
     id: 'project-3',
     title: 'Task Talk',
@@ -40,6 +39,16 @@ export const projects: Project[] = [
     tags: ['React', 'Tailwind CSS'],
     link: 'https://task-talk.vercel.app/',
     github: 'https://github.com/Subham8705/todo-list',
+    featured: false,
+  },
+  {
+    id: 'project-5',
+    title: 'FSW club website',
+    description: 'Official website for the Free Software Wing club at GRIET, built to showcase events, projects, and promote open-source initiatives.',
+    image: 'projects/fsw-club.png',
+    tags: ['React', 'Tailwind CSS'],
+    link: 'https://vivitsu-25-avi.vercel.app/',
+    github: 'https://github.com/Free-Software-Wing/Vivitsu-25',
     featured: false,
   },
   
