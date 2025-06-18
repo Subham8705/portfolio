@@ -13,7 +13,7 @@ export const socialLinks: Social[] = [
   },
   {
     name: 'Instagram',
-    url: 'https://instagram.com/subhamkumarshee',
+    url: 'https://www.instagram.com/subhamk_087?igsh=MWdpeWNuMnYzamJsZg==',
     icon: 'Instagram'
   }
 ];
