@@ -52,12 +52,22 @@ export default {
       animation: {
         'spin-slow': 'spin 8s linear infinite',
         'float': 'float 6s ease-in-out infinite',
+        'shimmer': 'shimmer 1.5s linear forwards',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
-        }
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%) rotate(45deg)' },
+          '100%': { transform: 'translateX(200%) rotate(45deg)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px 5px rgba(99, 102, 241, 0.4)' },
+          '50%': { boxShadow: '0 0 30px 10px rgba(99, 102, 241, 0.6)' },
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

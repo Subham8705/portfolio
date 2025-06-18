@@ -36,23 +36,33 @@ const About: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
           >
             <motion.div 
-              className="relative"
+              className="relative group transition-transform duration-500 ease-in-out hover:scale-105"
               variants={itemVariants}
             >
+              {/* Background glow box */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary-200 dark:bg-primary-900 rounded-lg -z-10"></div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary-200 dark:bg-secondary-900 rounded-lg -z-10"></div>
-              <div className="relative overflow-hidden rounded-lg shadow-xl">
+
+              {/* Image wrapper with shimmer + glow */}
+              <div className="relative overflow-hidden rounded-lg shadow-xl group-hover:animate-pulse-glow">
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                  <div className="absolute w-2/3 h-full bg-white/10 blur-md transform rotate-45 -translate-x-full group-hover:animate-shimmer"></div>
+                </div>
+
+                {/* Actual image */}
                 <img
                   src="https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_777,h_900,g_auto/v1743426464/A-20250216-WA0006_-_Subham_kumar_fhw4hr.jpg"
                   alt="About Me"
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
             </motion.div>
           </motion.div>
+
           
           <motion.div
             variants={containerVariants}
