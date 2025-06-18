@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { contactInfo } from '../data/social';
+
+const SERVICE_ID = 'service_tqndzbz';
+const TEMPLATE_ID = 'template_mjmdco8';
+const PUBLIC_KEY = 'l_Mmf-r5vlaVVUjWE';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,68 +16,36 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  
+
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     success: false,
     message: '',
     loading: false
   });
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Set loading state
-    setFormStatus(prev => ({ ...prev, loading: true }));
-    
-    try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
-      const mailtoLink = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
-      
-      // Open default email client
-      window.location.href = mailtoLink;
-      
-      // Show success message
-      setFormStatus({
-        submitted: true,
-        success: true,
-        message: 'Email client opened! Your message has been prepared for sending.',
-        loading: false
+    setFormStatus({ submitted: false, success: false, message: '', loading: true });
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
+      .then(() => {
+        setFormStatus({ submitted: true, success: true, message: 'Message sent successfully!', loading: false });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      })
+      .catch((error) => {
+        setFormStatus({ submitted: true, success: false, message: error.text || 'Something went wrong.', loading: false });
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setFormStatus(prev => ({ ...prev, submitted: false }));
+        }, 5000);
       });
-      
-      // Reset form after a delay
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setFormStatus({
-          submitted: false,
-          success: false,
-          message: '',
-          loading: false
-        });
-      }, 5000);
-      
-    } catch (error) {
-      setFormStatus({
-        submitted: true,
-        success: false,
-        message: 'There was an error opening your email client. Please try again or contact me directly.',
-        loading: false
-      });
-    }
   };
   
   const contactVariants = {
@@ -309,7 +282,7 @@ const Contact: React.FC = () => {
                     {formStatus.loading ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        Preparing...
+                        Sending...
                       </>
                     ) : (
                       <>
