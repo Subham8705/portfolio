@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
-import { Check, BookOpen, Code, User } from 'lucide-react';
+import { BookOpen, Code, User } from 'lucide-react';
 
 const About: React.FC = () => {
   const containerVariants = {
