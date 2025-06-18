@@ -47,11 +47,15 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ certificate, index })
           />
 
           {/* View Certificate Button */}
-          <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 z-20 transition-opacity">
+          <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300 bg-black/20 backdrop-blur-[1px] rounded-lg">
             <button
               onClick={() => setShowModal(true)}
-              className="bg-white text-sm font-medium px-4 py-2 rounded-full shadow-md hover:bg-gray-200 transition"
+              className="bg-white/90 hover:bg-white text-gray-800 font-medium px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:scale-105 flex items-center gap-2 border border-white/20"
             >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
               View Certificate
             </button>
           </div>

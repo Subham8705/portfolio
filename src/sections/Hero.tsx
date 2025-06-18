@@ -24,6 +24,34 @@ const Hero: React.FC = () => {
     }
   };
 
+  // Typing animation variants
+  const typingVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5, // Delay before typing starts
+        duration: 1.5, // Total duration of typing
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  // Character animation variants
+  const charVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.05, // Stagger each character
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    })
+  };
+
+  const name = "Subham Kumar Shee";
   const getSocialIcon = (name: string) => {
     switch (name) {
       case 'GitHub':
@@ -41,7 +69,7 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
+      {/* Background Elements (unchanged) */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary-300/30 dark:bg-primary-900/20 rounded-full filter blur-3xl"></div>
         <div className="absolute -bottom-40 -left-24 w-96 h-96 bg-secondary-300/30 dark:bg-secondary-900/20 rounded-full filter blur-3xl"></div>
@@ -68,12 +96,25 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
           
-          <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400"
-            variants={itemVariants}
+          <motion.div
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
+            variants={typingVariants}
+            initial="hidden"
+            animate="visible"
           >
-            Subham Kumar Shee
-          </motion.h1>
+            <div className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400">
+              {name.split("").map((char, i) => (
+                <motion.span 
+                  key={i} 
+                  custom={i}
+                  variants={charVariants}
+                  style={{ display: 'inline-block' }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
           
           <motion.p 
             className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300 max-w-2xl"
@@ -82,6 +123,7 @@ const Hero: React.FC = () => {
             IT Student & Aspiring Full-Stack Developer passionate about creating innovative web solutions.
           </motion.p>
           
+          {/* Rest of your component remains the same */}
           <motion.div 
             className="flex space-x-4 mb-12"
             variants={itemVariants}
