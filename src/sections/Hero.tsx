@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
     })
   };
 
-  const nameParts = ["Subham", "Kumar", "Shee"]; // Split by words
+  const nameParts = ["Subham", "Kumar", "Shee"];
 
   const getSocialIcon = (name: string) => {
     switch (name) {
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
   );
 
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center overflow-hidden relative">
       {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary-300/30 dark:bg-primary-900/20 rounded-full filter blur-3xl"></div>
@@ -63,6 +63,7 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-300/20 dark:bg-accent-900/10 rounded-full filter blur-3xl"></div>
       </div>
 
+      {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="flex flex-col items-center text-center"
@@ -84,23 +85,21 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Typing Name Animation */}
+          {/* Name Typing Animation */}
           <motion.div
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
             initial="hidden"
             animate="visible"
-            variants={{
-              visible: { transition: { staggerChildren: 0.15 } }
-            }}
+            variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
           >
             <div className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400 flex flex-wrap justify-center">
-              {nameParts.map((word, wordIndex) => (
+              {nameParts.map((word, i) => (
                 <motion.span
-                  key={wordIndex}
+                  key={i}
                   className={`${word === 'Shee' ? 'whitespace-nowrap' : ''} mr-2`}
                   style={{ display: 'inline-block' }}
                   variants={charVariants}
-                  custom={wordIndex}
+                  custom={i}
                 >
                   {word}
                 </motion.span>
@@ -108,7 +107,7 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Description */}
+          {/* Subtitle */}
           <motion.p
             className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300 max-w-2xl"
             variants={itemVariants}
@@ -116,9 +115,9 @@ const Hero: React.FC = () => {
             IT Student & Aspiring Full-Stack Developer passionate about creating innovative web solutions.
           </motion.p>
 
-          {/* Social Links */}
+          {/* Social Icons */}
           <motion.div
-            className="flex space-x-4 mb-12"
+            className="flex space-x-4 mb-8"
             variants={itemVariants}
           >
             {mainSocials.map(social => (
@@ -135,37 +134,38 @@ const Hero: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* Buttons + Arrow */}
           <motion.div
-            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            className="flex flex-col items-center space-y-6"
             variants={itemVariants}
           >
-            <a href="#projects" className="btn-primary">
-              View My Work
-            </a>
-            <a href="#contact" className="btn-outline dark:text-white">
-              Get In Touch
-            </a>
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+              <a href="#projects" className="btn-primary">
+                View My Work
+              </a>
+              <a href="#contact" className="btn-outline dark:text-white">
+                Get In Touch
+              </a>
+            </div>
+
+            <motion.a
+              href="#projects"
+              className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+            >
+              <span className="text-sm mb-1">Scroll Down</span>
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                <ArrowDown size={20} />
+              </motion.div>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Down Arrow */}
-      <motion.a
-        href="#projects"
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-      >
-        <span className="text-sm mb-2">Scroll Down</span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-        >
-          <ArrowDown size={20} />
-        </motion.div>
-      </motion.a>
     </section>
   );
 };

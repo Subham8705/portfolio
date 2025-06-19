@@ -24,7 +24,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill, index }) => {
     frontend: "bg-primary-500 dark:bg-primary-600",
     backend: "bg-secondary-500 dark:bg-secondary-600",
     design: "bg-accent-500 dark:bg-accent-600",
-    other: "bg-black-600 dark:bg-gray-600"
+    other: "bg-pink-500 dark:bg-pink-600", // vibrant color
   };
 
   return (
@@ -43,7 +43,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill, index }) => {
           variants={barVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: false, amount: 0.3 }}
           custom={index}
         />
       </div>
