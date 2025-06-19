@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
+import countapi from 'countapi-js'; // ✅ Correct usage
 
 interface NavbarProps {
   darkMode: boolean;
@@ -20,17 +21,23 @@ const navLinks = [
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
 
-  // Handle scroll event to change navbar appearance
+  // Handle scroll shadow
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // // CountAPI: increment and get visitor count
+  // useEffect(() => {
+  //   countapi.hit('subham-portfolio', 'visits').then((res) => {
+  //     setVisitorCount(res.value);
+  //   }).catch(console.error);
+  // }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -45,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <motion.header 
+    <motion.header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md' : 'bg-transparent'
       }`}
@@ -55,45 +62,50 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
+          
           {/* Logo */}
-          <a 
-            href="#home" 
-            className="text-xl md:text-2xl font-bold font-serif text-primary-600 dark:text-primary-400"
-          >
+          <a href="#home" className="text-xl md:text-2xl font-bold font-serif text-primary-600 dark:text-primary-400">
             Portfolio
           </a>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <button 
+            
+            {/* Visitor Count */}
+            {/* <span className="text-sm text-gray-500 dark:text-gray-400 mr-2">
+              Visitors: {visitorCount !== null ? visitorCount : '...'}
+            </span> */}
+
+            {/* Theme Toggle */}
+            <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+              aria-label="Toggle theme"
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Nav Button */}
           <div className="flex md:hidden items-center space-x-4">
-            <button 
+            <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+              aria-label="Toggle theme"
             >
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
-              className="text-gray-700 dark:text-gray-300 focus:outline-none"
+              className="text-gray-700 dark:text-gray-300"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
@@ -115,7 +127,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         <div className="flex flex-col p-8 h-full">
           <div className="flex justify-end mb-8">
             <button
-              className="text-gray-700 dark:text-gray-300 focus:outline-none"
+              className="text-gray-700 dark:text-gray-300"
               onClick={toggleMenu}
               aria-label="Close menu"
             >
@@ -123,16 +135,21 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </button>
           </div>
           <nav className="flex flex-col space-y-6">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                className="text-xl text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 onClick={toggleMenu}
               >
                 {link.name}
               </a>
             ))}
+
+            {/* Visitor Count in Mobile */}
+            {/* <span className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+              Visitors: {visitorCount !== null ? visitorCount : '...'}
+            </span> */}
           </nav>
         </div>
       </motion.div>
