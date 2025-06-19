@@ -24,5 +24,4 @@ export const education = [
   }
 ];
 
-// Empty experiences array since work experience section is removed
 export const experiences: Experience[] = [];

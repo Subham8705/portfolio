@@ -91,7 +91,7 @@ const Projects: React.FC = () => {
               onClick={() => setShowAll(prev => !prev)}
               className="px-6 py-2 bg-primary-600 text-white rounded-full text-sm font-medium hover:bg-primary-700 transition-colors"
             >
-              {showAll ? 'Show Less' : 'Show More'}
+              {showAll ? 'Show Less' : 'View all Projects'}
             </button>
           </div>
         )}

@@ -129,14 +129,14 @@ const Certificates: React.FC = () => {
           </div>
         )}
 
-        {/* View All Button */}
-        {!showAll && filteredCertificates.length > 6 && (
+         {/* View All / Show Less Button */}
+        {filteredCertificates.length > 6 && (
           <div className="text-center mt-10">
             <button
-              onClick={() => setShowAll(true)}
+              onClick={() => setShowAll(!showAll)}
               className="px-6 py-2 rounded-full bg-primary-600 text-white text-sm font-medium hover:bg-primary-700 transition"
             >
-              View All Certificates
+              {showAll ? 'Show Less' : 'View All Certificates'}
             </button>
           </div>
         )}

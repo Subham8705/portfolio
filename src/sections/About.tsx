@@ -36,7 +36,7 @@ const About: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: false, amount: 0.3, margin: '-100px' }}
           >
             <motion.div 
               className="relative group transition-transform duration-500 ease-in-out hover:scale-105"

@@ -24,34 +24,21 @@ const Hero: React.FC = () => {
     }
   };
 
-  // Typing animation variants
-  const typingVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.5, // Delay before typing starts
-        duration: 1.5, // Total duration of typing
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  // Character animation variants
   const charVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.05, // Stagger each character
+        delay: i * 0.05,
         duration: 0.3,
         ease: "easeOut"
       }
     })
   };
 
-  const name = "Subham Kumar Shee";
+  const nameParts = ["Subham", "Kumar", "Shee"]; // Split by words
+
   const getSocialIcon = (name: string) => {
     switch (name) {
       case 'GitHub':
@@ -63,13 +50,13 @@ const Hero: React.FC = () => {
     }
   };
 
-  const mainSocials = socialLinks.filter(social => 
-    social.name === 'GitHub' || social.name === 'LinkedIn'
+  const mainSocials = socialLinks.filter(
+    social => social.name === 'GitHub' || social.name === 'LinkedIn'
   );
 
   return (
     <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Background Elements (unchanged) */}
+      {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary-300/30 dark:bg-primary-900/20 rounded-full filter blur-3xl"></div>
         <div className="absolute -bottom-40 -left-24 w-96 h-96 bg-secondary-300/30 dark:bg-secondary-900/20 rounded-full filter blur-3xl"></div>
@@ -83,48 +70,54 @@ const Hero: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div 
+          {/* Profile Image */}
+          <motion.div
             className="mb-6 overflow-hidden rounded-full p-2 bg-gradient-to-r from-primary-500 to-secondary-500"
             variants={itemVariants}
           >
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-900">
-              <img 
-                src="https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_350,h_400,g_auto/v1743426464/A-20250216-WA0006_-_Subham_kumar_fhw4hr.jpg" 
-                alt="Subham Kumar Shee" 
+              <img
+                src="https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_350,h_400,g_auto/v1743426464/A-20250216-WA0006_-_Subham_kumar_fhw4hr.jpg"
+                alt="Subham Kumar Shee"
                 className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
-          
+
+          {/* Typing Name Animation */}
           <motion.div
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
-            variants={typingVariants}
             initial="hidden"
             animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.15 } }
+            }}
           >
-            <div className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400">
-              {name.split("").map((char, i) => (
-                <motion.span 
-                  key={i} 
-                  custom={i}
-                  variants={charVariants}
+            <div className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400 flex flex-wrap justify-center">
+              {nameParts.map((word, wordIndex) => (
+                <motion.span
+                  key={wordIndex}
+                  className={`${word === 'Shee' ? 'whitespace-nowrap' : ''} mr-2`}
                   style={{ display: 'inline-block' }}
+                  variants={charVariants}
+                  custom={wordIndex}
                 >
-                  {char === " " ? "\u00A0" : char}
+                  {word}
                 </motion.span>
               ))}
             </div>
           </motion.div>
-          
-          <motion.p 
+
+          {/* Description */}
+          <motion.p
             className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300 max-w-2xl"
             variants={itemVariants}
           >
             IT Student & Aspiring Full-Stack Developer passionate about creating innovative web solutions.
           </motion.p>
-          
-          {/* Rest of your component remains the same */}
-          <motion.div 
+
+          {/* Social Links */}
+          <motion.div
             className="flex space-x-4 mb-12"
             variants={itemVariants}
           >
@@ -141,27 +134,23 @@ const Hero: React.FC = () => {
               </a>
             ))}
           </motion.div>
-          
-          <motion.div 
+
+          {/* CTA Buttons */}
+          <motion.div
             className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
             variants={itemVariants}
           >
-            <a 
-              href="#projects" 
-              className="btn-primary"
-            >
+            <a href="#projects" className="btn-primary">
               View My Work
             </a>
-            <a 
-              href="#contact" 
-              className="btn-outline dark:text-white"
-            >
+            <a href="#contact" className="btn-outline dark:text-white">
               Get In Touch
             </a>
           </motion.div>
         </motion.div>
       </div>
-      
+
+      {/* Scroll Down Arrow */}
       <motion.a
         href="#projects"
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
