@@ -5,9 +5,10 @@ import SectionHeader from '../components/SectionHeader';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { contactInfo } from '../data/social';
 
-const SERVICE_ID = 'service_tqndzbz';
-const TEMPLATE_ID = 'template_mjmdco8';
-const PUBLIC_KEY = 'l_Mmf-r5vlaVVUjWE';
+// ✅ API keys from environment variables
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +48,7 @@ const Contact: React.FC = () => {
         }, 5000);
       });
   };
-  
+
   const contactVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -56,7 +57,7 @@ const Contact: React.FC = () => {
       transition: { duration: 0.5, ease: "easeOut" }
     }
   };
-  
+
   const iconBoxVariants = {
     hidden: { scale: 0 },
     visible: (i: number) => ({
@@ -69,7 +70,7 @@ const Contact: React.FC = () => {
       }
     })
   };
-  
+
   const staggerVariants = {
     hidden: { opacity: 0 },
     visible: {
