@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
-import countapi from 'countapi-js'; // ✅ Correct usage
+import countapi from 'countapi-js'; 
 
 interface NavbarProps {
   darkMode: boolean;

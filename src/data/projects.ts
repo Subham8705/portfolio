@@ -2,7 +2,7 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 'project-1',
+    id: 'project-6',
     title: 'RNA Hub',
     description: 'This project explores the integration of RNA 3D structural information with gene expression data to enhance cancer detection methodologies',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/v1745566595/background_czwzgo.jpg',
@@ -12,7 +12,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'project-4',
+    id: 'project-5',
     title: 'Safema',
     description: 'Safema is a revolutionary women\'s safety app that combines smart wearable devices with community protection features for immediate assistance in emergencies.',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_650,h_500,g_auto/v1747552956/32682d32-f5a0-4530-a1c8-e97b51423757_coyfvr.jpg',
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'project-2',
+    id: 'project-4',
     title: 'GRIET Study Sphere',
     description: 'GRIET Study Sphere is a centralized platform offering curated academic resources, notes, and tools to support GRIET students in their learning journey.',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_1500,h_1000,g_auto/v1750088930/Screenshot_2025-06-16_211824_awwurj.png',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: 'project-5',
+    id: 'project-2',
     title: 'FSW club website',
     description: 'Official website for the Free Software Wing club at GRIET, built to showcase events, projects, and promote open-source initiatives.',
     image: 'projects/fsw-club.png',
@@ -51,6 +51,15 @@ export const projects: Project[] = [
     github: 'https://github.com/Free-Software-Wing/Vivitsu-25',
     featured: false,
   },
-  
+  {
+    id: 'project-1',
+    title: 'Netflix Clone',
+    description: 'A simple Netflix clone built for fun, featuring user authentication, movie browsing, and a responsive UI using Firebase and React.',
+    image: 'projects/netflix-clone.webp',
+    tags: ['React', 'CSS','Firebase'],
+    link: 'https://netflix-clone-subham.vercel.app/',
+    github: 'https://github.com/Subham8705/netflix-clone',
+    featured: false,
+  },
   
 ];
