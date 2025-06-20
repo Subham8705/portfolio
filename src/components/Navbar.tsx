@@ -64,9 +64,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         <div className="flex items-center justify-between h-16 md:h-20">
           
           {/* Logo */}
-          <a href="#home" className="text-xl md:text-2xl font-bold font-serif text-primary-600 dark:text-primary-400">
-            Portfolio
-          </a>
+         <a
+  href="#home"
+  className="text-3xl text-bold md:text-4xl text-primary-600 dark:text-primary-400"
+  style={{ fontFamily: 'The Season' }}
+>
+  Portfolio
+</a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-6">
