@@ -6,9 +6,9 @@ export const projects: Project[] = [
     title: 'RNA Hub',
     description: 'This project explores the integration of RNA 3D structural information with gene expression data to enhance cancer detection methodologies',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/v1745566595/background_czwzgo.jpg',
-    tags: ['React', 'Tailwind CSS','Python ML'],
+    tags: ['React', 'Tailwind CSS','RenderForest', 'Pandas','Firebase'],
     // link: '',
-    github: 'https://github.com/nainat/RNA',
+    github: 'https://github.com/Subham8705/RNA-HUB',
     featured: true,
   },
   {

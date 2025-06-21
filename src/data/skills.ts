@@ -41,7 +41,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'Firebase',
-    level: 50,
+    level: 70,
     category: 'backend',
   },
   
