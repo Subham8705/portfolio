@@ -68,7 +68,7 @@ export const projects: Project[] = [
     image: 'projects/parallax1.gif',
     tags: ['CSS', 'HTML', 'JavaScript'],
     link: 'https://subham-parallax1.vercel.app/',
-    // github: 'https://github.com/Subham8705/parallax.git',
+    github: 'https://github.com/Subham8705/parallax.git',
     featured: false,
   },
 ];
