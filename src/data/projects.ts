@@ -61,5 +61,14 @@ export const projects: Project[] = [
     github: 'https://github.com/Subham8705/netflix-clone',
     featured: false,
   },
-  
+  {
+    id: 'project-7',
+    title: 'Parallax Project-1',
+    description: 'Created a dynamic parallax landing page with layered animations and custom Photoshop-edited assets, featuring glassmorphic UI and responsive design.',
+    image: 'projects/parallax1.gif',
+    tags: ['CSS', 'HTML', 'JavaScript'],
+    link: 'https://subham-parallax1.vercel.app/',
+    // github: 'https://github.com/Subham8705/parallax.git',
+    featured: false,
+  },
 ];
