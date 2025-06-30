@@ -2,7 +2,7 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 'project-8',
+    id: 'project-9',
     title: 'RNA Hub',
     description: 'This project explores the integration of RNA 3D structural information with gene expression data to enhance cancer detection methodologies',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/v1745566595/background_czwzgo.jpg',
@@ -12,13 +12,23 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'project-7',
+    id: 'project-8',
     title: 'Safema',
     description: 'Safema is a revolutionary women\'s safety app that combines smart wearable devices with community protection features for immediate assistance in emergencies.',
     image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_650,h_500,g_auto/v1747552956/32682d32-f5a0-4530-a1c8-e97b51423757_coyfvr.jpg',
     tags: ['React', 'React Native', 'MongoDB', 'Node.js','Express'],
     link: 'https://safema.vercel.app/',
     github: 'https://github.com/nainat/Safema-women-safety',
+    featured: true,
+  },
+  {
+    id: 'project-7',
+    title: 'Discord TableBot',
+    description: 'TableBot is a feature-rich Discord bot that lets users create, edit, and manage tabular data directly within their server using simple commands. Ideal for study groups, communities, or any team needing organized information without leaving Discord.',
+    image: 'projects/Tablebot.png',
+    tags: ['Python',],
+    link: 'https://discord.com/oauth2/authorize?client_id=1388874981328556228&permissions=2147567616&integration_type=0&scope=bot',
+    github: 'https://github.com/Subham8705/Table-DiscordBot',
     featured: true,
   },
   {
