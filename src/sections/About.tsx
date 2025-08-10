@@ -84,7 +84,7 @@ const About: React.FC = () => {
               className="text-gray-600 dark:text-gray-400 mb-6"
               variants={itemVariants}
             >
-              I'm Subham Kumar Shee, a passionate IT student at Gokaraju Rangaraju Institute of Engineering & Technology. My journey in technology began with curiosity about how websites work, which has evolved into a deep passion for full-stack development and creating innovative digital solutions.
+              I'am Subham Kumar Shee, a passionate IT student at Gokaraju Rangaraju Institute of Engineering & Technology. My journey in technology began with curiosity about how websites work, which has evolved into a deep passion for full-stack development and creating innovative digital solutions.
             </motion.p>
             
             <motion.div 
