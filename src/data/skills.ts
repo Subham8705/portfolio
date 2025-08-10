@@ -4,22 +4,22 @@ export const skills: Skill[] = [
   // Frontend
   {
     name: 'React',
-    level: 70,
+    level: 80,
     category: 'frontend',
   },
   {
     name: 'TypeScript',
-    level: 50,
+    level: 60,
     category: 'frontend',
   },
   {
     name: 'JavaScript',
-    level: 70,
+    level: 85,
     category: 'frontend',
   },
   {
     name: 'HTML/CSS',
-    level: 95,
+    level: 100,
     category: 'frontend',
   },
   {
@@ -41,7 +41,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'Firebase',
-    level: 70,
+    level: 80,
     category: 'backend',
   },
   
@@ -70,7 +70,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'Java',
-    level: 70,
+    level: 60,
     category: 'other',
   }
 ];
