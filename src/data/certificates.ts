@@ -2,6 +2,28 @@ import { Certificate } from '../types';
 
 export const certificates: Certificate[] = [
   {
+    id: 'cert-8',
+    title: 'Introducing Generative AI With AWS',
+    issuer: 'Udacity',
+    date: 'July 2025',
+    description: 'Completed AWS course on Generative AI, covering foundational concepts, model types, prompt engineering, and practical applications using Amazon Bedrock and related AWS AI services.',
+    image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_14000,h_1050,g_auto/v1754802211/Screenshot_2025-08-10_103307_sqzl6x.png',
+    credentialUrl: 'https://www.udacity.com/certificate/e/1e07962c-5972-11f0-b337-8b35c877c485',
+    skills: ['Generative AI Fundamentals', 'Model Evaluation & Deployment', 'Prompt Engineering', 'Amazon Bedrock'],
+    featured: false,
+  },
+  {
+    id: 'cert-7',
+    title: 'What is Generative AI?',
+    issuer: 'LinkedIn Learning',
+    date: 'June 2025',
+    description: 'Completed LinkedIn Learning course on Generative AI, gaining an understanding of its core concepts, underlying models, applications across industries, and ethical considerations.',
+    image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/c_crop,w_971,h_751,g_auto/v1754802888/Screenshot_2025-08-10_104415_xtnhzh.png',
+    credentialUrl: 'https://www.linkedin.com/learning/certificates/0863d282930f34f6d87ba487e046655a38e233a3cefa27e3a39fe75533104267?trk=share_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BsomjlRhrTbuJ%2FUz2RiL6VQ%3D%3D',
+    skills: ['Generative AI Fundamentals', 'Prompt Engineering Basics', 'Ethical & Responsible AI Practices'],
+    featured: false,
+  },
+  {
     id: 'cert-6',
     title: 'Python Essentials 1',
     issuer: 'CISCO',
