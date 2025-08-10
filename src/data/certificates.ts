@@ -2,6 +2,17 @@ import { Certificate } from '../types';
 
 export const certificates: Certificate[] = [
   {
+    id: 'cert-9',
+    title: 'Cyber Job Simulation by Deloitte',
+    issuer: 'Forage',
+    date: 'Aug 2025',
+    description: 'This simulation focused on analyzing security logs to identify unauthorized access attempts, assess vulnerabilities, and strengthen incident response strategies for protecting critical systems.',
+    image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/v1754805026/Screenshot_2025-08-10_111947_ozim9a.png',
+    credentialUrl: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_WS6MamZkzunu8c8aB_1754804582595_completion_certificate.pdf',
+    skills: ['Log Analysis & Monitoring', 'Unauthorized Access Detection', 'Threat Hunting', 'Security Information & Event Management (SIEM)'],
+    featured: false,
+  },
+  {
     id: 'cert-8',
     title: 'Introducing Generative AI With AWS',
     issuer: 'Udacity',
