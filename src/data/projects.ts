@@ -2,6 +2,16 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
+    id: 'project-10',
+    title: 'TeamUp',
+    description: 'This project facilitates the connection of developers and innovators by integrating real-time communication, profile discovery, and collaboration tools to streamline project teaming and hackathon participation.',
+    image: 'https://res.cloudinary.com/dpa0sb1tm/image/upload/v1754801638/Screenshot_2025-08-10_102344_brst5f.png',
+    tags: ['React', 'Tailwind CSS', 'Firebase'],
+    link: 'https://teamupns.vercel.app/',
+    github: 'https://github.com/Subham8705/Teamup',
+    featured: true,
+  },
+  {
     id: 'project-9',
     title: 'RNA Hub',
     description: 'This project explores the integration of RNA 3D structural information with gene expression data to enhance cancer detection methodologies',

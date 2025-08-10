@@ -128,7 +128,9 @@ const Contact: React.FC = () => {
                     Email
                   </h4>
                   <a 
-                    href={`mailto:${contactInfo.email}`} 
+                    href={"https://mail.google.com/mail/?view=cm&to=subhamkumarshee@gmail.com"} 
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   >
                     {contactInfo.email}
